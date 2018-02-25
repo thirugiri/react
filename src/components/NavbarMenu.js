@@ -18,6 +18,7 @@ class NavbarMenu extends Component{
  	logout =() => {
  		this.setState({userid: ''})
      localStorage.setItem('userid',"false");
+
     }
 
 
@@ -26,6 +27,7 @@ class NavbarMenu extends Component{
 	handleSocialLogin = (user) => {
 		this.setState({userid: user.profile.firstName})
 	  localStorage.setItem('userid',user.profile.firstName);
+		window.location.reload();
 	}
 
 	handleSocialLoginFailure = (err) => {
