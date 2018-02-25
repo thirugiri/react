@@ -95,7 +95,7 @@ class NavbarMenu extends Component{
 		}
 		else{
 			return(
-				<Menu Stackable>
+				<Menu stackable>
 					<Menu.Item><img src='https://goo.gl/Xr4dgB' /></Menu.Item>
 					<Menu.Item header href="/">BLogTest</Menu.Item>
 				  	<Menu.Item active={activeItem === 'aboutUs'} onClick={this.handleItemClick}  href='about'><Icon name='send' />About</Menu.Item>
