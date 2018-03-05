@@ -5,6 +5,9 @@ var bodyParser=require('body-parser');
 var cors=require('cors');
 var mongoose=require('mongoose');
 var Blogrouter= require('./src/route/Blogrouter')
+if(process.env.NODE_ENV === 'production'){
+	app.use(express.static('client/build'));
+}
 
 mongoose.Promise=require('bluebird');
 mongoose.connect('mongodb://localhost:27017/blogtest')
