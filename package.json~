@@ -1,0 +1,33 @@
+{
+  "name": "reactsem",
+  "version": "1.0.0",
+  "description": "To test react and express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon index.js",
+    "client": "cd client && npm start",
+    "dev": "concurrently --kill-others-on-fail \"npm server\" \"npm client\" ",
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thirugiri/react.git"
+  },
+  "keywords": [
+    "react",
+    "express",
+    "blog"
+  ],
+  "author": "giri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thirugiri/react/issues"
+  },
+  "homepage": "https://github.com/thirugiri/react#readme",
+  "dependencies": {
+    "axiom": "^0.1.6",
+    "body-parser": "^1.18.2",
+    "concurrently": "^3.5.1",
+    "express": "^4.16.2"
+  }
+}

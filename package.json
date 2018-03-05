@@ -1,29 +1,37 @@
 {
   "name": "reactsem",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "add": "^2.0.6",
-    "auth0-js": "^9.3.0",
-    "jQuery": "^1.7.4",
-    "jquery": "^3.3.1",
-    "react": "^16.2.0",
-    "react-background-slideshow": "^1.0.3",
-    "react-dom": "^16.2.0",
-    "react-facebook-login-component": "^0.9.1",
-    "react-medium-editor": "^1.8.1",
-    "react-router-dom": "^4.2.2",
-    "react-rte": "^0.16.0",
-    "react-scripts": "1.1.1",
-    "react-social-login": "^3.4.2",
-    "semantic": "0.0.1",
-    "semantic-ui": "^2.3.0",
-    "semantic-ui-react": "^0.78.2"
-  },
+  "version": "1.0.0",
+  "description": "To test react and express",
+  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon index.js",
+    "client": "cd client && npm start",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\" "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thirugiri/react.git"
+  },
+  "keywords": [
+    "react",
+    "express",
+    "blog"
+  ],
+  "author": "giri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thirugiri/react/issues"
+  },
+  "homepage": "https://github.com/thirugiri/react#readme",
+  "dependencies": {
+    "axiom": "^0.1.6",
+    "axios": "^0.18.0",
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.2",
+    "concurrently": "^3.5.1",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "mongoose": "^5.0.8"
   }
 }
