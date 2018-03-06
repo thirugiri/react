@@ -48,7 +48,7 @@ class Tablebody extends Component{
     render(){
         console.log(this.props.componentData._id);
         return <Table.Row>
-                <Table.Cell selectable><a target="_blank" href={"edit/"+this.props.componentData._id}>TestTitle{this.props.componentData.title}</a></Table.Cell>
+                <Table.Cell selectable><a target="_blank" href={"edit/"+this.props.componentData._id}>{this.props.componentData.title}</a></Table.Cell>
                 <Table.Cell><Button color='teal' target="_blank" href={"view/"+this.props.componentData._id}>View<icon class='write' /></Button></Table.Cell>
                 <Table.Cell><Button color='red' href={"delete/"+this.props.componentData._id}>Delete<icon class='write' /></Button></Table.Cell>
             </Table.Row>
