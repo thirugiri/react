@@ -24,4 +24,5 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use('/blog',Blogrouter);
-app.listen(5000);
+var port = process.env.port || 5000;
+app.listen(port);
