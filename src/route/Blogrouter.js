@@ -60,6 +60,9 @@ Blogrouter.route('/update/:id').post(function(req,res){
     });
 });
 
+Blogrouter.route('*').get(function(req,res){
+    res.send("Error 404 Not Found");
+})
 
 Blogrouter.route('/delete/:id').get(function(req,res){
     var id=req.params.id;
