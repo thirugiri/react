@@ -22,7 +22,7 @@ class Bloglist extends Component{
         this.state={blogs:[]};
     }
     componentDidMount(){
-        axios.post('http://localhost:5000/blog/myposts',{email:localStorage.getItem('useremail')})
+        axios.post('/blog/myposts',{email:localStorage.getItem('useremail')})
         .then(response=>{
             this.setState({blogs:response.data});
         })
