@@ -8,7 +8,7 @@ import {Table, Button, Grid, Header, Icon, Row, Col, Item} from 'semantic-ui-rea
 class Blog extends Component{
     constructor(props){
         super(props);
-        this.state={blogurl:"http://localhost:5000/blog/view/"+this.props.match.params.id,blog:[]};
+        this.state={blogurl:"https://learnhosting.herokuapp.com/blog/view/"+this.props.match.params.id,blog:[]};
     }
     componentDidMount(){
         axios.get(this.state.blogurl)
