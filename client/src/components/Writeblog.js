@@ -32,7 +32,7 @@ class Writeblog extends Component {
   }
   handleSubmit(event){
     console.log(this.state);
-    axios.post('http://learnhosting.herokuapp.com/blog/publish',{post:this.state})
+    axios.post('https://learnhosting.herokuapp.com/blog/publish',{post:this.state})
     .then(function(response){
       console.log(response);
       alert('Blog Published Sucessfully');

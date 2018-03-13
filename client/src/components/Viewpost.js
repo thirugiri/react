@@ -22,7 +22,7 @@ class Bloglist extends Component{
         this.state={blogs:[]};
     }
     componentDidMount(){
-        axios.post('http://learnhosting.herokuapp.com/blog/myposts',{email:localStorage.getItem('useremail')})
+        axios.post('https://learnhosting.herokuapp.com/blog/myposts',{email:localStorage.getItem('useremail')})
         .then(response=>{
             this.setState({blogs:response.data});
         })

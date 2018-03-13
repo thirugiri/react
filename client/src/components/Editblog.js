@@ -15,7 +15,7 @@ class Writeblog extends Component {
   {
     super(props);
     this.state={
-      url:"http://learnhosting.herokuapp.com/blog/view/"+this.props.match.params.id,
+      url:"https://learnhosting.herokuapp.com/blog/view/"+this.props.match.params.id,
       updateurl: 'http://learnhosting.herokuapp.com/blog/update/'+this.props.match.params.id,
       title:'', 
       desc:'',
