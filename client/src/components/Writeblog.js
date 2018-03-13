@@ -61,7 +61,7 @@ class Writeblog extends Component {
                <input type='text' placeholder='Description about blog' onChange={this.handledescChange} required/>
              </Form.Field>
              <br />
-             <h1>BLog Your Thoughts..</h1>
+             <h1>BLog Your Thoughts Below..</h1>
              <Editor
                tag="pre"
                text={this.state.text}
