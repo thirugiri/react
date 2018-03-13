@@ -22,17 +22,15 @@ class Bloglist extends Component{
         this.state={blogs:[]};
     }
     componentDidMount(){
-        axios.get('http://localhost:5000/blog/myposts')
+        axios.post('http://localhost:5000/blog/myposts',{email:localStorage.getItem('useremail')})
         .then(response=>{
             this.setState({blogs:response.data});
-            console.log(this.state.blogs);
         })
         .catch(function(err){
             console.log(err);
         })
     }
-    render(){
-        
+    render(){   
         return(
             <Grid container>
                 <br /> <br /> 

@@ -14,7 +14,7 @@ class Writeblog extends Component {
   constructor(props)
   {
     super(props);
-    this.state={text:'BLog here.... Select text for Styling..', title:'', desc:'',author:localStorage.getItem('userid')}
+    this.state={title:'', desc:'',text:'BLog here.... Select text for Styling..',author:localStorage.getItem('userid'),email:localStorage.getItem('useremail')}
     this.handleChange=this.handleChange.bind(this)
     this.handleSubmit=this.handleSubmit.bind(this);
     this.handletitleChange=this.handletitleChange.bind(this);
@@ -31,6 +31,7 @@ class Writeblog extends Component {
     this.setState({desc:event.target.value});
   }
   handleSubmit(event){
+    console.log(this.state);
     axios.post('http://localhost:5000/blog/publish',{post:this.state})
     .then(function(response){
       console.log(response);

@@ -6,9 +6,9 @@ var Schema=mongoose.Schema;
 var blogSchema= new Schema({
         title:String,
         desc:String,
+        text:String,
         author:String,
-        text:String
-    
+        email:String    
 },{
     collection: 'blogs'
 });
@@ -28,8 +28,8 @@ Blogrouter.route('/publish').post(function(req,res){
     });
 });
 
-Blogrouter.route('/myposts').get(function(req,res){
-    Blog.find(function(err,postblog){
+Blogrouter.route('/myposts').post(function(req,res){
+    Blog.find({email:req.body.email},function(err,postblog){
         if(err){
             console.log(err);
         }
@@ -49,10 +49,20 @@ Blogrouter.route('/view/:id').get(function(req,res){
     });
 });
 
+Blogrouter.route('/update/:id').post(function(req,res){
+    var id=req.params.id;
+    Blog.findByIdAndUpdate(id,{"title":req.body.title, "desc":req.body.desc, "text":req.body.text}, function(err,postblog){
+        if(err){
+            console.log(err);
+        }
+        else
+            res.json(postblog);
+    });
+});
+
 
 Blogrouter.route('/delete/:id').get(function(req,res){
     var id=req.params.id;
-    console.log('am working');
     Blog.findByIdAndRemove(id, function(err,postblog){
         if(err){
             console.log(err);

@@ -14,14 +14,22 @@ class Writeblog extends Component {
   constructor(props)
   {
     super(props);
-    this.state={url:"http://localhost:5000/blog/view/"+this.props.match.params.id,text:'BLog here.... Select text for Styling..', title:'', desc:'',author:localStorage.getItem('userid'),blog:[]}
+    this.state={
+      url:"http://localhost:5000/blog/view/"+this.props.match.params.id,
+      updateurl: 'http://localhost:5000/blog/update/'+this.props.match.params.id,
+      title:'', 
+      desc:'',
+      text:'BLog here.... Select text for Styling..', 
+      author:localStorage.getItem('userid'),
+      email:localStorage.getItem('useremail'),
+      blog:[]}
     this.handleChange=this.handleChange.bind(this)
     this.handleSubmit=this.handleSubmit.bind(this);
     this.handletitleChange=this.handletitleChange.bind(this);
     this.handledescChange=this.handledescChange.bind(this);
   };
   componentDidMount(){
-    console.log("url is"+this.state.url);
+    
     axios.get(this.state.url)
     .then(response=>{
         console.log(response.data);
@@ -33,7 +41,7 @@ class Writeblog extends Component {
   }
 
   handleChange(text, medium) {
-    this.setState({text: text});
+    this.setState({text:text});
   }
   handletitleChange(event){
     this.setState({title:event.target.value});
@@ -42,7 +50,8 @@ class Writeblog extends Component {
     this.setState({desc:event.target.value});
   }
   handleSubmit(event){
-    axios.post('http://localhost:5000/blog/publish',{post:this.state})
+    console.log("in react:"+this.state);
+    axios.post(this.state.updateurl,{title:this.state.title,desc:this.state.desc,text:this.state.text})
     .then(function(response){
       console.log(response);
       alert('Blog Updated Sucessfully');
@@ -80,7 +89,7 @@ class Writeblog extends Component {
              />
              <br /><br /><br />
              <Button type='submit' positive animated >
-               <Button.Content visible>Publish</Button.Content>
+               <Button.Content visible>Update</Button.Content>
                <Button.Content hidden>
                <Icon name='right arrow' />
                </Button.Content>
